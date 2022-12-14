@@ -5,10 +5,10 @@ import { createToken } from '../utils/jwtFunctions';
 
 const login = async (user: TLogin): Promise<TValid | TInvalid> => {
   const existedUser = await loginModel.getUser(user);
-  if (!existedUser.id) { 
+  if (!existedUser) { 
     return { type: 'UNAUTHORIZED', message: 'Username or password invalid' }; 
   }
-  const token = createToken({ id: existedUser.id, username: user.username });
+  const token = createToken({ id: existedUser.id as number, username: user.username });
   return { type: null, message: token };
 };
 
