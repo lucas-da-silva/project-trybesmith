@@ -26,9 +26,9 @@ CREATE TABLE Trybesmith.products (
 INSERT INTO
   Trybesmith.users (username, vocation, level, password)
 VALUES
-  ("reigal", "Guerreiro", 10, "1dragaonoceu"),
-  ("vyrion", "Inventor", 8, "pagandodividas"),
-  ("yraa", "Ladina", 5, "valarmorg");
+  ("reigal", "Warrior", 10, "1dragoninthesky"),
+  ("vyrion", "Inventor", 8, "payingdebts"),
+  ("yraa", "rogue", 5, "valarmorg");
 
 INSERT INTO
   Trybesmith.orders (user_id)
@@ -40,16 +40,16 @@ VALUES
 INSERT INTO
   Trybesmith.products (name, amount)
 VALUES
-  ("Espada curta", "10 peças de ouro");
+  ("short sword", "10 gold pieces");
 
 INSERT INTO
   Trybesmith.products (name, amount, order_id)
 VALUES
   (
-    "Escudo desnecessariamente grande",
-    "20 peças de ouro",
+    "unnecessarily large shield",
+    "20 gold pieces",
     1
   ),
-  ("Adaga de Aço Valírico", "1 peça de ouro", 2),
-  ("Colar de fogo", "1 peça de ouro", 2),
-  ("Engenhoca aleatória", "15 peças de ouro", 3);
+  ("Valyrian Steel Dagger", "1 gold piece", 2),
+  ("Necklace of fire", "1 gold piece", 2),
+  ("Random contraption", "15 gold pieces", 3);
