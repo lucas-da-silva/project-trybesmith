@@ -8,7 +8,7 @@ const getAll = async (_req: Request, res: Response) => {
 };
 
 const create = async (req: Request, res: Response) => {
-  const { id: userId, productsIds } = req.body;
+  const { user: { id: userId }, productsIds } = req.body;
   const newOrder = await orderService.create({ userId, productsIds });
   res.status(statusCodes.CREATED).json(newOrder); 
 };

@@ -8,12 +8,14 @@ const validateToken = (req: Request, res: Response, next: NextFunction) => {
   if (!token) {
     return res.status(statusCodes.UNAUTHORIZED).json({ message: 'Token not found' });
   }
-  const decoded = verifyToken(token) as TToken;
-  if (!decoded) {
+
+  try {
+    const decoded = verifyToken(token) as TToken;
+    req.body.user = decoded.data;
+    return next();
+  } catch (err) {
     return res.status(statusCodes.UNAUTHORIZED).json({ message: 'Invalid token' });
   }
-  req.body = decoded.data;
-  next();
 };
 
 export default validateToken;
