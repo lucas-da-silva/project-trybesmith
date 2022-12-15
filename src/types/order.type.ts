@@ -1,5 +1,5 @@
 export type TOrder = {
-  id: number;
+  id?: number;
   userId: number;
   productsIds: number[];
 };

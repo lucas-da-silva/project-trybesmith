@@ -11,7 +11,7 @@ const getAll = async (): Promise<TOrder[]> => {
   return orders;
 };
 
-const create = async (userId: number, productsIds: number[]) => {
+const create = async ({ userId, productsIds }: TOrder): Promise<TOrder> => {
   const [{ insertId }] = await connection.execute<ResultSetHeader>(
     'INSERT INTO Trybesmith.orders(user_id) VALUES(?);',
     [userId],

@@ -6,4 +6,9 @@ const getAll = async (): Promise<TOrder[]> => {
   return orders;
 };
 
-export default { getAll };
+const create = async (order: TOrder): Promise<TOrder> => {
+  const newOrder = await orderModel.create(order);
+  return newOrder;
+};
+
+export default { getAll, create };
