@@ -7,4 +7,10 @@ const getAll = async (_req: Request, res: Response) => {
   res.status(statusCodes.OK).json(orders);
 };
 
-export default { getAll };
+const create = async (req: Request, res: Response) => {
+  const { id: userId, productsIds } = req.body;
+  const newOrder = await orderService.create({ userId, productsIds });
+  res.status(statusCodes.CREATED).json(newOrder); 
+};
+
+export default { getAll, create };
