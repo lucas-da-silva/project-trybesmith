@@ -4,7 +4,7 @@ import { validateName, validateAmount } from '../middlewares/product.middleware'
 
 const router = Router();
 
-router.post('/', validateName, validateAmount, productController.create);
 router.get('/', productController.getAll);
+router.post('/', validateName, validateAmount, productController.create);
 
 export default router;
